@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { agent 'slave2'}
     
     tools {
         jdk 'java17'
