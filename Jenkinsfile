@@ -1,12 +1,11 @@
 pipeline {
-    agent { label 'slave2'}
+    agent any
     
     tools {
         jdk 'java17'
         maven 'maven3'
     }
 
-    
     stages {
         stage('git checkout') {
             steps {
@@ -22,13 +21,13 @@ pipeline {
         
         stage('test') {
             steps {
-                sh 'mvn test'
+                sh 'mvn test'    
             }
         }
         
         stage('package') {
             steps {
-                sh 'mvn package'
+                sh 'mvn package'    
             }
         }
     }
